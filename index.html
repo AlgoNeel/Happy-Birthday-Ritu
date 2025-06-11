@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Ritu!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(ellipse at top, #0a1028, #0b112d);
+    font-family: 'Playfair Display', serif;
+    color: #e8f0ff;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+      100px 200px white,
+      250px 400px white,
+      400px 100px white,
+      600px 300px white,
+      800px 200px white,
+      900px 500px white;
+    animation: twinkle 5s infinite alternate ease-in-out;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.8; }
+  }
+
+  .letter {
+    max-width: 720px;
+    margin: 80px auto;
+    background: rgba(30, 35, 60, 0.8);
+    backdrop-filter: blur(6px);
+    padding: 50px 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 120, 200, 0.5);
+    box-shadow: 0 0 20px rgba(180, 180, 255, 0.3);
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+    z-index: 2;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 4px #5568c4;
+    display: block;
+    margin: 0 auto 30px auto;
+    
+    
+    
+    
+    
+    
+    
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.3em;
+    color: #dce4ff;
+    margin-bottom: 20px;
+  }
+
+  .message {
+    font-size: 1.15em;
+    line-height: 1.9em;
+    white-space: pre-wrap;
+    text-align: left;
+    color: #d8e3ff;
+  }
+
+  .signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2em;
+    text-align: right;
+    color: #dab3ff;
+    margin-top: 40px;
+  }
+
+  .button {
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  button {
+    background-color: #6a88ff;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(106, 136, 255, 0.4);
+  }
+
+  button:hover {
+    background-color: #4e6ad4;
+    transform: scale(1.05);
+  }
+
+  .surprise {
+    display: none;
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: rgba(240, 240, 255, 0.1);
+    border-left: 3px solid #bbaaff;
+    font-style: italic;
+    color: #c8d4ff;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  audio {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .letter {
+      margin: 30px 15px;
+      padding: 35px 20px;
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+    }
+
+    h1 {
+      font-size: 1.7em;
+    }
+
+    .message {
+      font-size: 1em;
+    }
+
+    .signature {
+      font-size: 1.7em;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<audio autoplay loop>
+  <source src="birthday-melody.mp3" type="audio/mpeg">
+</audio>
+
+<div class="letter">
+  <img src="ritu.jpg" alt="Ritu's Photo" class="photo" />
+  <h1>Happy Birthday, Ritu!</h1>
+
+  <div class="message">
+<strong>Mis Natorian,</strong>
+
+On this very special day, I just wanted to take a moment to wish you the happiest birthday. You are not just a senior to me, but someone I truly admire and respect.
+
+From helping me with my studies to guiding me whenever I felt lost, you’ve always been there—like a mentor. Your words, your advice, and your patience have helped me grow, not just academically but personally too.
+
+At the same time, our conversations—sometimes light, sometimes deep—made you a close friend. I felt heard, understood, and respected. That means a lot to me.
+
+You’ve taught me not only from books, but also from life. For that, I will always be grateful.
+
+I pray this year brings you more success, more peace, and moments that make you genuinely happy. May you continue to inspire others just as you’ve inspired me.
+
+Thank you for being such a wonderful person in my life.
+  </div>
+
+  <div class="signature">— Swapneel Das</div>
+
+  <div class="button">
+    <button onclick="document.getElementById('surprise').style.display='block'">Reveal a Note ✨</button>
+  </div>
+
+  <div class="surprise" id="surprise">
+    “You are the poetry in ordinary life,<br>
+    A rare light in an otherwise dim sky.”<br><br>
+    — Thank you for being you.
+  </div>
+</div>
+</body>
+</html>
